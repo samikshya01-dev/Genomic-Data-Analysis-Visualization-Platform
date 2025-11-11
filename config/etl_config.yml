@@ -1,0 +1,82 @@
+data_sources:
+  ensembl_ftp: "https://ftp.ensembl.org/pub/release-110/variation/vcf/homo_sapiens/"
+  vcf_url: "https://ftp.ensembl.org/pub/release-110/variation/vcf/homo_sapiens/homo_sapiens-chrX.vcf.gz"
+  ensembl_api: "https://rest.ensembl.org"
+  drugbank_api: "https://www.drugbank.ca/api/v1"
+  clinvar_api: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+
+paths:
+  raw_data: "data/raw"
+  raw_data_dir: "data/raw"
+  processed_data: "data/processed"
+  processed_data_dir: "data/processed"
+  logs_dir: "data/logs"
+  logs: "data/logs"
+
+  # VCF files
+  vcf_file: "data/raw/homo_sapiens-chrX.vcf.gz"
+  vcf_filename: "homo_sapiens-chrX.vcf.gz"
+  vcf_extracted: "data/raw/homo_sapiens-chrX.vcf"
+
+  # Processed CSVs
+  variants_csv: "data/processed/variants.csv"
+  genes_csv: "data/processed/genes.csv"
+  drug_annotations_csv: "data/processed/drug_annotations.csv"
+
+vcf_parsing:
+  chromosome: "X"
+  use_vcfpy: false
+  max_rows: null  # null for all rows
+
+  # INFO fields to extract
+  info_fields:
+    - AF  # Allele Frequency
+    - AC  # Allele Count
+    - AN  # Total Alleles
+    - CLNSIG  # Clinical Significance
+    - CLNDN  # Clinical Disease Name
+    - GENEINFO  # Gene Information
+    - MC  # Molecular Consequence
+
+vcf_parser:
+  # INFO fields to extract from VCF
+  extract_info_fields:
+    - AF  # Allele Frequency
+    - AC  # Allele Count
+    - AN  # Total Alleles
+    - CLNSIG  # Clinical Significance
+    - CLNDN  # Clinical Disease Name
+    - GENEINFO  # Gene Information
+    - MC  # Molecular Consequence
+
+  # ClinVar clinical significance codes mapping
+  clinical_significance_mapping:
+    0: "Uncertain significance"
+    1: "Not provided"
+    2: "Benign"
+    3: "Likely benign"
+    4: "Likely pathogenic"
+    5: "Pathogenic"
+    6: "Drug response"
+    7: "Histocompatibility"
+    255: "Other"
+
+processing:
+  chunk_size: 50000
+  max_workers: 4
+  batch_insert_size: 10000
+
+enrichment:
+  enable_gene_mapping: true
+  enable_drug_annotations: true
+  enable_clinvar: false
+  api_rate_limit: 10  # requests per second
+  cache_results: true
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_rotation: daily
+  max_log_size_mb: 100
+  backup_count: 7
+

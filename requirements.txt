@@ -1,0 +1,43 @@
+# Core Data Processing
+pandas>=2.1.0,<2.3.0
+numpy>=1.24.0,<2.0.0
+
+# VCF Parsing
+vcfpy>=0.13.6
+pysam>=0.21.0
+
+# Database - MongoDB for optimized performance
+pymongo>=4.5.0
+
+# Core Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Database - MongoDB
+pymongo>=4.5.0
+
+# VCF Parsing
+vcfpy>=0.13.0
+
+# Configuration
+PyYAML>=6.0.1
+
+# HTTP Requests & APIs
+requests>=2.31.0
+urllib3>=2.0.0
+
+# Data Validation
+jsonschema>=4.19.0
+
+# Progress & Logging
+tqdm>=4.66.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Job Scheduling (optional)
+schedule>=1.2.0
+
+

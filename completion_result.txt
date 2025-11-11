@@ -1,0 +1,47 @@
+2025-11-08 16:31:49,296 - src.etl.load_to_mysql - INFO - Starting load_genes
+2025-11-08 16:31:49,296 - src.etl.load_to_mysql - INFO - Loading genes from data/processed/genes.csv
+2025-11-08 16:31:49,308 - src.etl.load_to_mysql - WARNING - Genes CSV file is empty (no gene data in variants)
+2025-11-08 16:31:49,309 - src.etl.load_to_mysql - INFO - Skipping gene loading - 0 genes to load
+2025-11-08 16:31:49,309 - src.etl.load_to_mysql - INFO - Completed load_genes in 0.01 seconds
+2025-11-08 16:31:49,309 - src.etl.load_to_mysql - INFO - Starting load_drug_annotations
+2025-11-08 16:31:49,309 - src.etl.load_to_mysql - INFO - Loading drug annotations from data/processed/drug_annotations.csv
+2025-11-08 16:31:49,366 - src.etl.load_to_mysql - INFO - Loaded 10 drug annotations successfully
+2025-11-08 16:31:49,366 - src.etl.load_to_mysql - INFO - Completed load_drug_annotations in 0.06 seconds
+2025-11-08 16:31:49,366 - src.etl.load_to_mysql - INFO - Starting create_mutation_summary
+2025-11-08 16:31:49,366 - src.etl.load_to_mysql - INFO - Creating mutation summary
+2025-11-08 16:31:49,369 - src.etl.load_to_mysql - INFO - Created mutation summary with 0 rows
+2025-11-08 16:31:49,369 - src.etl.load_to_mysql - INFO - Completed create_mutation_summary in 0.00 seconds
+================================================================================
+COMPLETING DATABASE LOADING
+================================================================================
+
+[1/3] Loading genes...
+✓ Genes loaded (or skipped if empty)
+
+[2/3] Loading drug annotations...
+✓ Drug annotations loaded
+
+[3/3] Creating mutation summary...
+✓ Mutation summary created
+
+================================================================================
+VERIFYING DATABASE
+================================================================================
+
+Table Counts:
+--------------------------------------------------------------------------------
+  ✓ variants......................      44,063,797 rows
+  ⚠ genes.........................               0 rows
+  ✓ drug_annotations..............              40 rows
+  ⚠ mutation_summary..............               0 rows
+
+================================================================================
+✓ DATABASE LOADING COMPLETED!
+================================================================================
+
+Your genomic analysis database is ready!
+Connect Power BI using:
+  Server: localhost
+  Database: genomic_analysis
+  Username: root
+  Password: password

@@ -1,0 +1,94 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables
+.env
+.env.local
+
+# Data Files (large files not for git)
+data/raw/*.vcf
+data/raw/*.vcf.gz
+data/processed/*.csv
+data/processed/*.txt
+data/logs/*.log
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*_backup.*
+test_*.txt
+populate_output.txt
+load_output.log
+run_output.log
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Keep directory structure but ignore content
+data/raw/.gitkeep
+data/processed/.gitkeep
+data/logs/.gitkeep
+
+# Allow some important files
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/logs/.gitkeep
+!.env.template
+

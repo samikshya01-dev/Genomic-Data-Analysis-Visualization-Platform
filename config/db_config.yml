@@ -1,0 +1,17 @@
+# MongoDB Configuration - RADICAL SPEED MODE
+connection_string: "mongodb://localhost:27017/"
+database:
+  host: localhost
+  port: 27017
+  database: genomic_analysis
+performance:
+  batch_size: 500000  # MASSIVE batches for 3.6GB file (44M records)
+  max_workers: 4
+  # RADICAL settings for MAXIMUM speed
+  write_concern: 0  # Fire-and-forget (fastest possible)
+  journal: false    # No journaling (fastest possible)
+collections:
+  variants: variants
+  genes: genes
+  drug_annotations: drug_annotations
+  mutation_summary: mutation_summary
